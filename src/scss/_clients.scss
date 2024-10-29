@@ -1,0 +1,137 @@
+.clients {
+  @include blockWrapper;
+  margin-bottom: 12.5rem;
+}
+
+.clients__content {
+  @include blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.clients__row {
+  display: flex;
+  align-items: flex-end;
+
+  gap: 6rem;
+  margin-bottom: 5rem;
+}
+
+.clients__text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.clients__heading {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 8rem;
+  line-height: 9rem;
+  letter-spacing: -0.04em;
+}
+
+.clients__text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.4rem;
+  letter-spacing: -0.02em;
+  max-width: 110rem;
+}
+
+.clients__arrows {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  margin-left: auto;
+
+  &:has(.clients__arrow.swiper-button-lock) {
+    display: none;
+  }
+}
+
+.clients__arrow {
+  border: 1px solid #e4e8f0;
+  border-radius: 1.2rem;
+  width: 4.8rem;
+  height: 4.8rem;
+  display: grid;
+  place-items: center;
+  transition: border-color 0.2s, background-color 0.2s;
+  flex-shrink: 0;
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: var(--text-color);
+    transition: fill 0.2s;
+  }
+
+  &.swiper-button-disabled {
+    cursor: default;
+    svg {
+      fill: #e4e8f0;
+    }
+  }
+
+  &:not(.swiper-button-disabled) {
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        svg {
+          fill: white;
+        }
+      }
+    }
+  }
+}
+
+.clients__slider {
+  .swiper-slide {
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.5rem;
+    width: calc(20% - 1.5rem * 4 / 5);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.clients__slider-card {
+  position: relative;
+  border: 1px solid #e4e8f0;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: border-color 0.2s;
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 71.4%;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: #e94d11;
+      .clients__slider-card-logo {
+        filter: grayscale(0%);
+      }
+    }
+  }
+}
+
+.clients__slider-card-logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: filter 0.4s;
+  filter: grayscale(100%);
+  object-fit: cover;
+}

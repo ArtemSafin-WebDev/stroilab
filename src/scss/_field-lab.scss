@@ -1,0 +1,101 @@
+.field-lab {
+  @include blockWrapper;
+  margin-bottom: 5rem;
+}
+
+.field-lab__content {
+  @include blockContent;
+}
+
+.field-lab__card {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  grid-gap: 2rem;
+  grid-template-areas: "heading text" "link text";
+  padding: 2.4rem;
+  border: 2px solid rgba(228, 232, 240, 1);
+  border-radius: 1.2rem;
+  transition: border-color 0.2s;
+  position: relative;
+  overflow: hidden;
+  min-height: 50rem;
+  grid-template-rows: 1fr auto;
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--primary-color);
+      .field-lab__link-icon {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s, visibility 0s linear 0.2s;
+      }
+
+      .field-lab__link {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity 0.2s, visibility 0.2s;
+      }
+    }
+  }
+}
+
+.field-lab__heading {
+  grid-area: heading;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 6rem;
+  line-height: 6.5rem;
+  letter-spacing: -0.04em;
+}
+
+.field-lab__text {
+  grid-area: text;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.4rem;
+  letter-spacing: -0.02em;
+  max-width: 58rem;
+
+  p {
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.field-lab__link-wrapper {
+  grid-area: link;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "stack";
+  align-items: flex-end;
+  justify-items: flex-start;
+  align-self: flex-end;
+}
+
+.field-lab__link-icon {
+  border: 1px solid var(--primary-color);
+  border-radius: 1.2rem;
+  width: 4.8rem;
+  height: 4.8rem;
+  display: grid;
+  place-items: center;
+  transition: opacity 0.2s, visibility 0.2s;
+  grid-area: stack;
+  svg {
+    width: 1rem;
+    height: 1rem;
+    fill: var(--primary-color);
+    transform: scaleX(-1);
+  }
+}
+
+.field-lab__link {
+  width: 27rem;
+  grid-area: stack;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0s linear 0.2s;
+  pointer-events: none;
+}

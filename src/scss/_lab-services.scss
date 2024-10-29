@@ -1,0 +1,157 @@
+.lab-services {
+  @include blockWrapper;
+  margin-bottom: 12.5rem;
+}
+
+.lab-services__content {
+  @include blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.lab-services__row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 2rem;
+  grid-template-areas: "textcontent textcontent cert";
+  align-self: flex-start;
+}
+
+.lab-services__text-content {
+  grid-area: textcontent;
+  display: flex;
+  flex-direction: column;
+}
+
+.lab-services__certificate {
+  grid-area: cert;
+}
+
+.lab-services__certificate-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.2rem;
+}
+
+.lab-services__heading {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 8rem;
+  line-height: 9rem;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.3rem;
+}
+
+.lab-services__text {
+}
+
+.lab-services__text-wrapper {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.4rem;
+  letter-spacing: -0.02em;
+  p {
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.lab-services__text-short {
+  .all-shown & {
+    display: none;
+  }
+}
+
+.lab-services__text-full {
+  display: none;
+  .all-shown & {
+    display: block;
+  }
+}
+
+.lab-services__text-btn {
+  margin-top: 1.3rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  letter-spacing: -0.02em;
+  text-decoration-line: underline;
+  color: var(--primary-color);
+  align-self: flex-start;
+  & > span {
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+
+  .all-shown & {
+    & > span {
+      &:nth-child(1) {
+        display: none;
+      }
+
+      &:nth-child(2) {
+        display: block;
+      }
+    }
+  }
+}
+
+.lab-services__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 2rem;
+  margin-top: 5rem;
+}
+
+.lab-services__list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.lab-services__card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border: 1px solid #e4e8f0;
+  border-radius: 1.2rem;
+  padding: 2.4rem;
+}
+
+.lab-services__card-icon {
+  margin-left: auto;
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+  margin-top: -1.4rem;
+  margin-right: -1rem;
+}
+
+.lab-services__card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: -1.5rem;
+}
+
+.lab-services__card-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 4rem;
+  letter-spacing: -0.04em;
+}
+
+.lab-services__card-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #a2aaba;
+}

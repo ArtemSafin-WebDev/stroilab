@@ -1,0 +1,14 @@
+:root {
+  --primary-color: #008b8a;
+  --primary-color-hover: hsl(180, 105%, 23%);
+  --orange: #e94d11;
+  --green: #a5c950;
+  --text-color: #0c0d0f;
+  --pt-root-ui: "PT Root UI", sans-serif;
+  --content-padding: 5.5rem;
+  --container-width: 181rem;
+
+  @include breakpoint(mobile) {
+    --content-padding: 1.6rem;
+  }
+}
