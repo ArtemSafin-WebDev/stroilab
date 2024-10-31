@@ -14,7 +14,7 @@ html {
   font-size: clamp(2px, 0.47vw + 1px, 40px);
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
-  scroll-padding-top: 10rem;
+  scroll-padding-top: 8rem;
   @include breakpoint(mobile) {
     font-size: 10px;
   }

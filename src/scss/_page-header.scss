@@ -27,6 +27,12 @@
   font-weight: 700;
   line-height: 2.5rem; /* 125% */
   letter-spacing: -0.04rem;
+
+  @media (hover: hover) {
+    &:hover {
+      color: rgba(white, 0.7);
+    }
+  }
 }
 
 .page-header__social-list {
@@ -47,6 +53,11 @@
   font-style: normal;
   font-weight: 700;
   line-height: 2rem;
+  @media (hover: hover) {
+    &:hover {
+      color: rgba(white, 0.7);
+    }
+  }
 
   svg {
     flex-shrink: 0;
@@ -71,6 +82,7 @@
 
   @media (hover: hover) {
     &:hover {
+      color: rgba(white, 0.7);
       text-decoration-color: transparent;
     }
   }

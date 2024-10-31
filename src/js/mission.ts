@@ -1,8 +1,13 @@
 import Swiper from "swiper";
 import { Controller, EffectFade, Navigation, Pagination } from "swiper/modules";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/controller";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function mission() {
   const elements = Array.from(
@@ -55,5 +60,30 @@ export default function mission() {
     });
     mainInstance.controller.control = bgInstance;
     bgInstance.controller.control = mainInstance;
+
+    gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: element,
+          start: "top bottom-=30%",
+        },
+      });
+      tl.from(".mission__heading", {
+        autoAlpha: 0,
+        duration: 1.2,
+        y: 60,
+        ease: "power3.out",
+      });
+      tl.from(
+        ".mission__card",
+        {
+          autoAlpha: 0,
+          duration: 1.2,
+
+          ease: "power2.out",
+        },
+        ">-=0.6"
+      );
+    }, element);
   });
 }

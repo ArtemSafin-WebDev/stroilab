@@ -56,6 +56,11 @@
   font-size: 4rem;
   line-height: 2.5rem;
   letter-spacing: -0.02em;
+  @media (hover: hover) {
+    &:hover {
+      color: rgba(white, 0.7);
+    }
+  }
 }
 
 .contact-us__card-email {
@@ -69,6 +74,7 @@
   @media (hover: hover) {
     &:hover {
       text-decoration-color: transparent;
+      color: rgba(white, 0.7);
     }
   }
 }
@@ -91,6 +97,11 @@
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 2rem;
+  @media (hover: hover) {
+    &:hover {
+      color: rgba(white, 0.7);
+    }
+  }
 
   svg {
     flex-shrink: 0;
