@@ -12,9 +12,11 @@ import actions from "./actions";
 import fieldLab from "./fieldLab";
 import naturalTest from "./naturalTest";
 import contactUs from "./contactUs";
+import testLab from "./testLab";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
+  testLab();
   clients();
   equipment();
   fancybox();
@@ -25,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fieldLab();
   actions();
   naturalTest();
-  // contactUs();
+  contactUs();
 });
 
 window.addEventListener("load", () => {

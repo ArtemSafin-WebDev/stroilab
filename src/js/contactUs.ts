@@ -21,7 +21,6 @@ export default function contactUs() {
         autoAlpha: 0,
         duration: 1.2,
         ease: "power3.out",
-        y: 60,
       });
       tl.from(
         ".contact-us__form",
@@ -29,7 +28,6 @@ export default function contactUs() {
           autoAlpha: 0,
           duration: 1.2,
           ease: "power3.out",
-          y: 60,
         },
         "<"
       );
