@@ -1,12 +1,20 @@
 .lab-services {
   @include blockWrapper;
   margin-bottom: 12.5rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 3.1rem;
+  }
 }
 
 .lab-services__content {
   @include blockContent;
   display: flex;
   flex-direction: column;
+
+  @include breakpoint(mobile) {
+    padding: 0 1rem;
+  }
 }
 
 .lab-services__row {
@@ -15,16 +23,31 @@
   grid-gap: 2rem;
   grid-template-areas: "textcontent textcontent cert";
   align-self: flex-start;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
 }
 
 .lab-services__text-content {
   grid-area: textcontent;
   display: flex;
   flex-direction: column;
+
+  @include breakpoint(mobile) {
+    display: contents;
+  }
 }
 
 .lab-services__certificate {
   grid-area: cert;
+
+  @include breakpoint(mobile) {
+    order: -5;
+  }
 }
 
 .lab-services__certificate-image {
@@ -41,6 +64,16 @@
   line-height: 9rem;
   letter-spacing: -0.04em;
   margin-bottom: 1.3rem;
+
+  @include breakpoint(mobile) {
+    margin: 0;
+    font-size: 2.7rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 3rem; /* 111.111% */
+    letter-spacing: -0.108rem;
+    order: -30;
+  }
 }
 
 .lab-services__text {
@@ -52,8 +85,20 @@
   font-size: 2.4rem;
   line-height: 3.4rem;
   letter-spacing: -0.02em;
+
+  @include breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 2.5rem;
+    letter-spacing: -0.036rem;
+  }
   p {
     margin-bottom: 2rem;
+
+    @include breakpoint(mobile) {
+      margin-bottom: 1.5rem;
+    }
     &:last-child {
       margin-bottom: 0;
     }
@@ -83,6 +128,19 @@
   text-decoration-line: underline;
   color: var(--primary-color);
   align-self: flex-start;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.8rem; /* 112.5% */
+    letter-spacing: -0.032rem;
+    text-decoration-line: underline;
+    margin-top: 1.7rem;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 1px;
+    text-decoration-thickness: 1px;
+  }
   & > span {
     &:nth-child(2) {
       display: none;
@@ -102,11 +160,39 @@
   }
 }
 
-.lab-services__list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-gap: 2rem;
+.lab-services__slider {
   margin-top: 5rem;
+
+  @include breakpoint(mobile) {
+    margin-top: 2rem;
+  }
+
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-wrapper {
+    @include breakpointMF(small-tablet) {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-gap: 2rem;
+    }
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-sizing: border-box;
+
+    @include breakpoint(mobile) {
+      width: 23rem;
+      margin-right: 1.5rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 .lab-services__list-item {
@@ -121,6 +207,12 @@
   border: 1px solid #e4e8f0;
   border-radius: 1.2rem;
   padding: 2.4rem;
+  flex-grow: 1;
+
+  @include breakpoint(mobile) {
+    padding: 2.4rem;
+    padding-right: 0.8rem;
+  }
 }
 
 .lab-services__card-icon {
@@ -130,6 +222,13 @@
   object-fit: contain;
   margin-top: -1.4rem;
   margin-right: -1rem;
+
+  @include breakpoint(mobile) {
+    margin-top: -1rem;
+    margin-right: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 }
 
 .lab-services__card-content {
@@ -137,21 +236,41 @@
   flex-direction: column;
   gap: 0;
   margin-top: -1.5rem;
+
+  @include breakpoint(mobile) {
+    margin-top: -1rem;
+  }
 }
 
 .lab-services__card-title {
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 4rem;
   line-height: 4rem;
   letter-spacing: -0.04em;
+
+  @include breakpoint(mobile) {
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 4rem;
+    letter-spacing: -0.12rem;
+  }
 }
 
 .lab-services__card-text {
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.8rem;
   line-height: 120%;
   letter-spacing: -0.02em;
   color: #a2aaba;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.032rem;
+  }
 }

@@ -8,6 +8,11 @@
   flex-direction: column;
   gap: 7.5rem;
   padding: 4rem 0;
+
+  @include breakpoint(mobile) {
+    padding: 1.4rem 0;
+    gap: 3.2rem;
+  }
 }
 
 .page-footer__top-row {
@@ -16,21 +21,40 @@
   grid-gap: 2rem;
   align-items: flex-end;
   grid-template-areas: "logo nav contacts";
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 .page-footer__logo {
   grid-area: logo;
   justify-self: flex-start;
+
+  @include breakpoint(mobile) {
+    align-self: center;
+  }
 }
 
 .page-footer__logo-image {
   display: block;
   height: auto;
   width: 33rem;
+
+  @include breakpoint(mobile) {
+    width: 16.5433rem;
+  }
 }
 
 .page-footer__nav {
   grid-area: nav;
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
 
   ul {
     display: flex;
@@ -62,6 +86,11 @@
   flex-direction: column;
   gap: 2.5rem;
   grid-area: contacts;
+
+  @include breakpoint(mobile) {
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 .page-footer__contacts-links {
@@ -70,6 +99,13 @@
   gap: 2rem;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @include breakpoint(mobile) {
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
 }
 
 .page-footer__contacts-link {
@@ -82,6 +118,15 @@
   font-size: 2rem;
   line-height: 2.5rem;
   letter-spacing: -0.1rem;
+
+  @include breakpoint(mobile) {
+    gap: 1.5rem;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.5rem; /* 156.25% */
+    letter-spacing: -0.1rem;
+  }
 
   @media (hover: hover) {
     &:hover {
@@ -107,6 +152,13 @@
   display: grid;
   place-items: center;
   transition: background-color 0.2s, border-color 0.2s;
+
+  @include breakpoint(mobile) {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1.2rem;
+    border: 1px solid #e4e8f0;
+  }
   svg {
     display: block;
     width: 100%;
@@ -117,18 +169,37 @@
 }
 
 .page-footer__requisites {
+  @include breakpoint(mobile) {
+    order: -10;
+  }
   ul {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: space-between;
+
+    @include breakpoint(mobile) {
+      flex-wrap: nowrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+    }
     li {
       font-style: normal;
       font-weight: 700;
       font-size: 2rem;
       line-height: 2.5rem;
       letter-spacing: -0.1rem;
+
+      @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 2.5rem; /* 156.25% */
+        letter-spacing: -0.1rem;
+      }
     }
   }
 }
@@ -143,6 +214,17 @@
   color: white;
   background-color: #0c0d0f;
   align-items: center;
+
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    text-align: center;
+    border-radius: 1.2rem;
+    background: #0c0d0f;
+    padding: 1.5rem 2rem;
+  }
 }
 
 .page-footer__copyright {
@@ -152,6 +234,14 @@
   line-height: 2.5rem;
   letter-spacing: -0.01em;
   grid-area: copyright;
+
+  @include breakpoint(mobile) {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.5rem;
+    letter-spacing: -0.013rem;
+  }
 }
 
 .page-footer__policy {
@@ -162,6 +252,14 @@
   letter-spacing: -0.01em;
   grid-area: policy;
   justify-self: center;
+
+  @include breakpoint(mobile) {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.013rem;
+  }
 }
 
 .page-footer__made-by {
@@ -175,6 +273,18 @@
   letter-spacing: -0.01em;
   grid-area: madeby;
   justify-self: flex-end;
+
+  @include breakpoint(mobile) {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 2.1rem */
+    letter-spacing: -0.015rem;
+    gap: 1rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .page-footer__made-by-logo {
@@ -182,4 +292,8 @@
   height: auto;
   width: 3.5rem;
   flex-shrink: 0;
+
+  @include breakpoint(mobile) {
+    width: 3.4667rem;
+  }
 }

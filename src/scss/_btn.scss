@@ -34,4 +34,25 @@
       border-color: var(--primary-color-hover);
     }
   }
+
+  @include breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 2.4rem;
+    letter-spacing: -0.028rem;
+    padding: 0.8rem 1.5rem;
+    padding-bottom: 1.26rem;
+    padding-right: 1.5rem;
+    border-radius: 1rem;
+    min-height: 6rem;
+    align-self: stretch;
+
+    width: auto;
+
+    svg {
+      width: 0.8048rem;
+      height: 0.8048rem;
+    }
+  }
 }

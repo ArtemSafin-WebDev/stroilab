@@ -9,21 +9,26 @@ export default function actions() {
   );
 
   elements.forEach((element) => {
-    gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: element,
-          start: "top bottom-=30%",
-        },
-      });
+    let mm = gsap.matchMedia();
+    mm.add(
+      "(min-width: 641px)",
+      () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top bottom-=30%",
+          },
+        });
 
-      tl.from(".actions__list-item", {
-        y: 60,
-        autoAlpha: 0,
-        duration: 1.2,
-        stagger: 0.6,
-        ease: "power3.out",
-      });
-    }, element);
+        tl.from(".actions__list-item", {
+          y: 60,
+          autoAlpha: 0,
+          duration: 1.2,
+          stagger: 0.6,
+          ease: "power3.out",
+        });
+      },
+      element
+    );
   });
 }

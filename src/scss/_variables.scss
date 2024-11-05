@@ -9,6 +9,6 @@
   --container-width: 181rem;
 
   @include breakpoint(mobile) {
-    --content-padding: 1.6rem;
+    --content-padding: 1rem;
   }
 }

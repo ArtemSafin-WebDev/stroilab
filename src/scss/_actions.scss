@@ -1,6 +1,10 @@
 .actions {
   @include blockWrapper;
   margin-bottom: 5rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 2.5rem;
+  }
 }
 
 .actions__content {
@@ -11,6 +15,12 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 5rem;
+
+  @include breakpoint(mobile) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 2.5rem;
+    grid-auto-rows: 1fr;
+  }
 }
 
 .actions__list-item {
@@ -31,6 +41,39 @@
   flex-direction: column;
   flex-grow: 1;
   overflow: hidden;
+
+  &--blue {
+    background-image: url("../images/actions/1.svg");
+    background-size: 56.4rem auto;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+
+    @include breakpoint(mobile) {
+      background-image: url("../images/actions/1-mobile.svg");
+      background-size: 13rem auto;
+      background-position: right top;
+    }
+  }
+
+  &--green {
+    background-image: url("../images/actions/2.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include breakpoint(mobile) {
+      background-image: none;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    padding: 1.2rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
   &:link,
   &:visited {
     color: white;
@@ -81,6 +124,15 @@
   line-height: 6.5rem;
   letter-spacing: -0.04em;
   max-width: 41rem;
+
+  @include breakpoint(mobile) {
+    font-size: 2.7rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 3rem;
+    letter-spacing: -0.108rem;
+    max-width: none;
+  }
 }
 
 .actions__card-text {
@@ -90,6 +142,14 @@
   line-height: 3rem;
   letter-spacing: -0.02em;
   max-width: 40rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 2rem;
+    letter-spacing: -0.032rem;
+  }
 }
 
 .actions__card-link {
@@ -128,5 +188,30 @@
   &:link,
   &:visited {
     color: white;
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 2.4rem;
+    letter-spacing: -0.028rem;
+    padding: 0.8rem 1.5rem;
+    padding-bottom: 1.26rem;
+    padding-right: 1.5rem;
+    border-radius: 1rem;
+    min-height: 6rem;
+    align-self: stretch;
+    width: auto;
+
+    svg {
+      width: 0.8048rem;
+      height: 0.8048rem;
+
+      &.icon-doc {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
   }
 }

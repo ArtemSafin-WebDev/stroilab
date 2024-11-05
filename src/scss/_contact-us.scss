@@ -1,6 +1,10 @@
 .contact-us {
   @include blockWrapper;
   margin-bottom: 3.5rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 1.2rem;
+  }
 }
 
 .contact-us__content {
@@ -9,6 +13,12 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-gap: 2rem;
   grid-template-areas: "card card form";
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
 }
 
 .contact-us__card {
@@ -28,16 +38,36 @@
   background-repeat: no-repeat;
   background-position: right bottom;
   padding: 2.4rem;
+
+  @include breakpoint(mobile) {
+    padding: 1.2rem 1.6rem;
+    border-radius: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    background-image: url("../images/contact-us-bg-mobile.svg");
+    background-size: 25rem auto;
+    background-position: right bottom;
+  }
 }
 
 .contact-us__card-heading {
   grid-area: heading;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 650;
   font-size: 8rem;
   line-height: 9rem;
   letter-spacing: -0.04em;
   max-width: 53rem;
+
+  @include breakpoint(mobile) {
+    max-width: none;
+    font-size: 2.7rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 3rem; /* 111.111% */
+    letter-spacing: -0.108rem;
+  }
 }
 
 .contact-us__card-contacts {
@@ -45,14 +75,21 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 2.5rem;
+  gap: 5rem;
   margin-top: 2rem;
+
+  @include breakpoint(mobile) {
+    order: 10;
+    margin: 0;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
 }
 
 .contact-us__card-phone {
   white-space: nowrap;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 4rem;
   line-height: 2.5rem;
   letter-spacing: -0.02em;
@@ -61,16 +98,35 @@
       color: rgba(white, 0.7);
     }
   }
+
+  @include breakpoint(mobile) {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.5rem; /* 125% */
+    letter-spacing: -0.04rem;
+  }
 }
 
 .contact-us__card-email {
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 4rem;
   line-height: 2.5rem;
   letter-spacing: -0.02em;
   text-decoration-line: underline;
   transition: text-decoration-color 0.2s, color 0.2s;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: 0.2rem;
+  text-underline-offset: 0.5rem;
+  @include breakpoint(mobile) {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.5rem; /* 125% */
+    letter-spacing: -0.04rem;
+    text-underline-offset: 2px;
+  }
   @media (hover: hover) {
     &:hover {
       text-decoration-color: transparent;
@@ -84,6 +140,10 @@
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
+
+  @include breakpoint(mobile) {
+    gap: 2.5rem;
+  }
 }
 .contact-us__card-social-list-item {
   flex-shrink: 0;
@@ -94,9 +154,16 @@
   align-items: center;
   gap: 0.8rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 2.4rem;
   line-height: 2rem;
+
+  @include breakpoint(mobile) {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2rem;
+  }
   @media (hover: hover) {
     &:hover {
       color: rgba(white, 0.7);
@@ -116,10 +183,19 @@
   grid-area: text;
   align-self: flex-end;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 2.4rem;
   line-height: 3.4rem;
   letter-spacing: -0.02em;
+
+  @include breakpoint(mobile) {
+    align-self: stretch;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2rem; /* 125% */
+    letter-spacing: -0.032rem;
+  }
 }
 
 .contact-us__form {
@@ -127,12 +203,21 @@
   display: flex;
   flex-direction: column;
   gap: 2.8rem;
+
+  @include breakpoint(mobile) {
+    padding: 0 1.2rem;
+    gap: 1.5rem;
+  }
 }
 
 .contact-us__form-fields {
   display: flex;
   flex-direction: column;
   gap: 2.8rem;
+
+  @include breakpoint(mobile) {
+    gap: 1.5rem;
+  }
 }
 
 .contact-us__form-input {
@@ -150,6 +235,19 @@
   background: #e9edf3;
   box-shadow: inset 0rem 0rem 2.1rem rgba(255, 255, 255, 0.4);
   border-radius: 1.2rem;
+
+  @include breakpoint(mobile) {
+    border-radius: 1.2rem;
+    background: #e9edf3;
+    box-shadow: 0px 0px 2.1rem 0px rgba(255, 255, 255, 0.4) inset;
+    height: 6rem;
+    padding: 0 2.4rem;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.4rem;
+    letter-spacing: -0.032rem;
+  }
   &::placeholder {
     color: #0c0d0f;
   }
@@ -160,6 +258,11 @@ textarea.contact-us__form-input {
   height: 12.5rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
+
+  @include breakpoint(mobile) {
+    height: 10rem;
+    padding: 2rem 2.4rem;
+  }
 }
 
 .contact-us__form-policy-checkbox {
@@ -209,4 +312,12 @@ textarea.contact-us__form-input {
   font-size: 1.4rem;
   line-height: 2rem;
   letter-spacing: -0.02em;
+
+  @include breakpoint(mobile) {
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: -0.022rem;
+  }
 }

@@ -14,7 +14,38 @@ export default function mission() {
     document.querySelectorAll<HTMLElement>(".mission")
   );
 
+  const mql = window.matchMedia("(max-width: 640px)");
   elements.forEach((element) => {
+    let mm = gsap.matchMedia();
+    const leftCol = element.querySelector<HTMLElement>(
+      ".mission__card-left-col"
+    );
+    const content = element.querySelector<HTMLElement>(".mission__content");
+    const leftColNextSibling = leftCol?.nextElementSibling;
+    let leftColMoved = false;
+    if (leftCol) {
+      const handleWidthChange = (e: MediaQueryListEvent | MediaQueryList) => {
+        if (e.matches) {
+          if (!leftColMoved) {
+            content?.appendChild(leftCol);
+            leftColMoved = true;
+          }
+        } else {
+          if (leftColMoved) {
+            leftColNextSibling?.parentElement?.insertBefore(
+              leftCol,
+              leftColNextSibling
+            );
+            leftColMoved = false;
+          }
+        }
+      };
+
+      mql.addEventListener("change", handleWidthChange);
+
+      handleWidthChange(mql);
+    }
+
     const bgContainer = element.querySelector<HTMLElement>(
       ".mission__card-bg .swiper"
     );
@@ -61,29 +92,33 @@ export default function mission() {
     mainInstance.controller.control = bgInstance;
     bgInstance.controller.control = mainInstance;
 
-    gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: element,
-          start: "top bottom-=30%",
-        },
-      });
-      tl.from(".mission__heading", {
-        autoAlpha: 0,
-        duration: 1.2,
-        y: 60,
-        ease: "power3.out",
-      });
-      tl.from(
-        ".mission__card",
-        {
+    mm.add(
+      "(min-width: 641px)",
+      () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top bottom-=30%",
+          },
+        });
+        tl.from(".mission__heading", {
           autoAlpha: 0,
           duration: 1.2,
+          y: 60,
+          ease: "power3.out",
+        });
+        tl.from(
+          ".mission__card",
+          {
+            autoAlpha: 0,
+            duration: 1.2,
 
-          ease: "power2.out",
-        },
-        ">-=0.6"
-      );
-    }, element);
+            ease: "power2.out",
+          },
+          ">-=0.6"
+        );
+      },
+      element
+    );
   });
 }

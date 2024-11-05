@@ -1,6 +1,10 @@
 .mission {
   @include blockWrapper;
   margin-bottom: 12.5rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 5rem;
+  }
 }
 
 .mission__content {
@@ -19,6 +23,15 @@
   align-self: center;
   margin-bottom: 5rem;
   text-wrap: balance;
+
+  @include breakpoint(mobile) {
+    font-size: 2.7rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3rem; /* 111.111% */
+    letter-spacing: -0.108rem;
+    margin-bottom: 2.5rem;
+  }
 }
 
 .mission__card {
@@ -35,7 +48,13 @@
   isolation: isolate;
   grid-template-areas: "left right";
   color: white;
-  background-color: var(--primary-color);
+
+  @include breakpoint(mobile) {
+    min-height: 47rem;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .mission__card-bg {
@@ -98,10 +117,25 @@
   justify-content: space-between;
   align-self: flex-end;
   align-items: flex-end;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 0 1rem;
+    justify-content: flex-start;
+    align-self: stretch;
+    margin-top: 2.5rem;
+  }
 }
 
 .mission__card-link {
   width: 25rem;
+
+  @include breakpoint(mobile) {
+    width: auto;
+  }
 }
 
 .mission__card-arrows {
@@ -110,6 +144,13 @@
   gap: 0.6rem;
   flex-shrink: 0;
   margin-left: auto;
+
+  @include breakpoint(mobile) {
+    gap: 0.6rem;
+    order: -10;
+    justify-content: center;
+    margin: 0;
+  }
 }
 
 .mission__card-arrow {
@@ -127,26 +168,55 @@
     height: 100%;
     fill: white;
     transition: fill 0.2s;
-  }
 
-  &.swiper-button-disabled {
-    cursor: default;
-    border-color: rgba(white, 0.5);
-    svg {
-      fill: rgba(white, 0.5);
+    @include breakpoint(mobile) {
+      fill: var(--text-color);
     }
   }
 
-  &:not(.swiper-button-disabled) {
-    @media (hover: hover) {
-      &:hover {
-        background-color: white;
+  @include breakpointMF(small-tablet) {
+    &.swiper-button-disabled {
+      cursor: default;
+      border-color: rgba(white, 0.5);
+      svg {
+        fill: rgba(white, 0.5);
+      }
+    }
 
-        svg {
-          fill: var(--primary-color);
+    &:not(.swiper-button-disabled) {
+      @media (hover: hover) {
+        &:hover {
+          background-color: white;
+
+          svg {
+            fill: var(--primary-color);
+          }
         }
       }
     }
+  }
+
+  @include breakpoint(mobile) {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1.2rem;
+    border: 1px solid #e4e8f0;
+
+    &.swiper-button-disabled {
+      cursor: default;
+
+      svg {
+        fill: #e4e8f0;
+      }
+    }
+
+    // &:not(.swiper-button-disabled):active {
+    //   background-color: var(--primary-color);
+    //   border-color: var(--primary-color);
+    //   svg {
+    //     fill: white;
+    //   }
+    // }
   }
 }
 
@@ -162,6 +232,15 @@
   padding-left: 4.2rem;
   padding-right: 4.2rem;
   color: var(--text-color);
+
+  @include breakpoint(mobile) {
+    padding: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background-size: 16.9rem auto;
+    border-radius: 1rem;
+    margin-top: auto;
+  }
 }
 
 .mission__card-pagination {
@@ -172,6 +251,15 @@
   letter-spacing: -0.04rem;
   color: #a2aaba;
   margin-bottom: 4.1rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.683rem;
+    letter-spacing: -0.022rem;
+    margin-bottom: 1rem;
+  }
 
   .swiper-pagination-current {
     font-weight: 700;
@@ -190,37 +278,66 @@
   font-size: 2rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 3rem; /* 150% */
+  line-height: 3rem;
   letter-spacing: -0.1rem;
   text-transform: uppercase;
   color: var(--primary-color);
   margin-bottom: 2rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.485rem;
+    letter-spacing: -0.0495rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
 }
 
 .mission__card-text-slider-card-title {
   font-size: 4.8rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 5.5rem; /* 114.583% */
+  line-height: 5.5rem;
   letter-spacing: -0.2rem;
   margin-bottom: 2rem;
+
+  @include breakpoint(mobile) {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.5rem;
+    letter-spacing: -0.099rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .mission__card-text-slider-card-text {
   font-size: 2rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 3rem; /* 150% */
+  line-height: 3rem;
   letter-spacing: -0.1rem;
   margin-bottom: 4rem;
   max-width: 43rem;
+
+  @include breakpoint(mobile) {
+    max-width: none;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.6rem; /* 133.333% */
+    letter-spacing: -0.0495rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .mission__card-text-slider-card-link {
   font-size: 1.8rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 1.8rem; /* 100% */
+  line-height: 1.8rem;
   letter-spacing: -0.036rem;
   text-decoration-line: underline;
   color: var(--primary-color);
@@ -229,6 +346,7 @@
   text-underline-offset: 1px;
   transition: text-decoration-color 0.2s;
   margin-top: auto;
+
   &:link,
   &:visited {
     color: var(--primary-color);
@@ -237,5 +355,14 @@
     &:hover {
       text-decoration-color: transparent;
     }
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0.891rem; /* 74.25% */
+    letter-spacing: -0.024rem;
+    text-decoration-line: underline;
   }
 }

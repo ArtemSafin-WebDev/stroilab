@@ -9,28 +9,33 @@ export default function contactUs() {
   );
 
   elements.forEach((element) => {
-    gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: element,
-          start: "top bottom-=30%",
-        },
-      });
+    let mm = gsap.matchMedia();
+    mm.add(
+      "(min-width: 641px)",
+      () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top bottom-=30%",
+          },
+        });
 
-      tl.from(".contact-us__card", {
-        autoAlpha: 0,
-        duration: 1.2,
-        ease: "power3.out",
-      });
-      tl.from(
-        ".contact-us__form",
-        {
+        tl.from(".contact-us__card", {
           autoAlpha: 0,
           duration: 1.2,
           ease: "power3.out",
-        },
-        "<"
-      );
-    }, element);
+        });
+        tl.from(
+          ".contact-us__form",
+          {
+            autoAlpha: 0,
+            duration: 1.2,
+            ease: "power3.out",
+          },
+          "<"
+        );
+      },
+      element
+    );
   });
 }

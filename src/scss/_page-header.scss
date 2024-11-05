@@ -11,6 +11,10 @@
   a {
     pointer-events: all;
   }
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
 }
 
 .page-header__content {

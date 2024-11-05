@@ -1,6 +1,10 @@
 .field-lab {
   @include blockWrapper;
   margin-bottom: 5rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 2.5rem;
+  }
 }
 
 .field-lab__content {
@@ -20,19 +24,32 @@
   overflow: hidden;
   min-height: 50rem;
   grid-template-rows: 1fr auto;
-  @media (hover: hover) {
-    &:hover {
-      border-color: var(--primary-color);
-      .field-lab__link-icon {
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.2s, visibility 0s linear 0.2s;
-      }
 
-      .field-lab__link {
-        opacity: 1;
-        visibility: inherit;
-        transition: opacity 0.2s, visibility 0.2s;
+  @include breakpoint(mobile) {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 1.2rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+
+  @include breakpointMF(small-tablet) {
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--primary-color);
+        .field-lab__link-icon {
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.2s, visibility 0s linear 0.2s;
+        }
+
+        .field-lab__link {
+          opacity: 1;
+          visibility: inherit;
+          transition: opacity 0.2s, visibility 0.2s;
+        }
       }
     }
   }
@@ -45,19 +62,41 @@
   font-size: 6rem;
   line-height: 6.5rem;
   letter-spacing: -0.04em;
+
+  @include breakpoint(mobile) {
+    font-size: 2.7rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 3rem;
+    letter-spacing: -0.108rem;
+    text-wrap: balance;
+    padding-right: 2rem;
+  }
 }
 
 .field-lab__text {
   grid-area: text;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 2.4rem;
   line-height: 3.4rem;
   letter-spacing: -0.02em;
   max-width: 58rem;
 
+  @include breakpoint(mobile) {
+    max-width: none;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 2rem;
+    letter-spacing: -0.032rem;
+  }
+
   p {
     margin-bottom: 2rem;
+    @include breakpoint(mobile) {
+      margin-bottom: 1.5rem;
+    }
     &:last-child {
       margin-bottom: 0;
     }
@@ -72,6 +111,10 @@
   align-items: flex-end;
   justify-items: flex-start;
   align-self: flex-end;
+
+  @include breakpoint(mobile) {
+    display: contents;
+  }
 }
 
 .field-lab__link-icon {
@@ -83,6 +126,10 @@
   place-items: center;
   transition: opacity 0.2s, visibility 0.2s;
   grid-area: stack;
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
   svg {
     width: 1rem;
     height: 1rem;
@@ -98,4 +145,11 @@
   visibility: hidden;
   transition: opacity 0.2s, visibility 0s linear 0.2s;
   pointer-events: none;
+
+  @include breakpoint(mobile) {
+    order: 10;
+    width: auto;
+    opacity: 1;
+    visibility: inherit;
+  }
 }

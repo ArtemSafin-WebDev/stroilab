@@ -1,12 +1,20 @@
 .test-lab {
   @include blockWrapper;
   margin-bottom: 12.5rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 3.9rem;
+  }
 }
 
 .test-lab__content {
   @include blockContent;
   display: flex;
   flex-direction: column;
+
+  @include breakpoint(mobile) {
+    padding: 0 1rem;
+  }
 }
 
 .test-lab__top-row {
@@ -15,6 +23,13 @@
   grid-gap: 2rem;
   align-items: flex-end;
   grid-template-areas: "textcontent textcontent link";
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
 }
 
 .test-lab__text-content {
@@ -22,6 +37,14 @@
   display: flex;
   flex-direction: column;
   max-width: 94rem;
+
+  @include breakpoint(mobile) {
+    max-width: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
 .test-lab__heading {
@@ -32,6 +55,15 @@
   letter-spacing: -0.04em;
   margin-bottom: 2.5rem;
 
+  @include breakpoint(mobile) {
+    font-size: 2.7rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 3rem;
+    letter-spacing: -0.108rem;
+    margin: 0;
+  }
+
   img {
     display: inline-block;
     vertical-align: middle;
@@ -39,6 +71,15 @@
     width: 26.6rem;
     height: auto;
     max-width: none;
+
+    @include breakpoint(mobile) {
+      margin: 0;
+      align-self: stretch;
+      width: 100%;
+      order: 10;
+
+      display: none;
+    }
   }
 }
 
@@ -48,24 +89,68 @@
   font-size: 2.4rem;
   line-height: 3.4rem;
   letter-spacing: -0.02em;
+
+  @include breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 2.5rem;
+    letter-spacing: -0.036rem;
+  }
+}
+
+.test-lab__mobile-cerfificate {
+  display: none;
+
+  @include breakpoint(mobile) {
+    align-self: stretch;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
 .test-lab__link {
   grid-area: link;
   align-self: flex-end;
   justify-self: stretch;
+
+  @include breakpoint(mobile) {
+    align-self: stretch;
+  }
 }
 
-.test-lab__list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-gap: 2rem;
+.test-lab__slider {
   margin-top: 6rem;
-}
+  @include breakpoint(mobile) {
+    margin-top: 5rem;
+  }
+  .swiper {
+    overflow: visible;
+  }
 
-.test-lab__list-item {
-  display: flex;
-  flex-direction: column;
+  .swiper-wrapper {
+    @include breakpointMF(small-tablet) {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-gap: 2rem;
+    }
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-sizing: border-box;
+
+    @include breakpoint(mobile) {
+      width: 23rem;
+      margin-right: 1.5rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 .test-lab__card {
@@ -77,21 +162,46 @@
   padding: 2.4rem;
   padding-top: 4rem;
   gap: 0;
+  flex-grow: 1;
+
+  @include breakpoint(mobile) {
+    padding: 2.4rem;
+    padding-top: 1.7rem;
+    border-radius: 1.2rem;
+    border: 1px solid #e4e8f0;
+    padding-right: 2rem;
+  }
 }
 
 .test-lab__card-amount {
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 4rem;
   line-height: 4rem;
   letter-spacing: -0.04em;
+
+  @include breakpoint(mobile) {
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 4rem;
+    letter-spacing: -0.12rem;
+  }
 }
 
 .test-lab__card-text {
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.8rem;
   line-height: 120%;
   letter-spacing: -0.02em;
   color: #a2aaba;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.032rem;
+  }
 }

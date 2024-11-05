@@ -1,6 +1,10 @@
 .natural-test {
   @include blockWrapper;
   margin-bottom: 12.5rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 5rem;
+  }
 }
 
 .natural-tests__content {
@@ -26,6 +30,15 @@
       border-color: var(--primary-color);
     }
   }
+
+  @include breakpoint(mobile) {
+    min-height: auto;
+    padding: 1.2rem;
+    padding-top: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
 }
 
 .natural-tests__card-wrapper {
@@ -33,17 +46,19 @@
   inset: 0;
   z-index: 1;
 
-  @media (hover: hover) {
-    &:hover {
-      & ~ .natural-tests__link-wrapper .natural-tests__link-icon {
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.2s, visibility 0s linear 0.2s;
-      }
-      & ~ .natural-tests__link-wrapper .natural-tests__link {
-        opacity: 1;
-        visibility: inherit;
-        transition: opacity 0.2s, visibility 0.2s;
+  @include breakpointMF(small-tablet) {
+    @media (hover: hover) {
+      &:hover {
+        & ~ .natural-tests__link-wrapper .natural-tests__link-icon {
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.2s, visibility 0s linear 0.2s;
+        }
+        & ~ .natural-tests__link-wrapper .natural-tests__link {
+          opacity: 1;
+          visibility: inherit;
+          transition: opacity 0.2s, visibility 0.2s;
+        }
       }
     }
   }
@@ -56,6 +71,14 @@
   font-size: 6rem;
   line-height: 6.5rem;
   letter-spacing: -0.04em;
+
+  @include breakpoint(mobile) {
+    font-size: 2.7rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 3rem;
+    letter-spacing: -0.108rem;
+  }
 }
 
 .natural-tests__text-content {
@@ -63,6 +86,10 @@
   display: flex;
   flex-direction: column;
   gap: 8rem;
+
+  @include breakpoint(mobile) {
+    display: contents;
+  }
 }
 
 .natural-tests__text {
@@ -73,8 +100,20 @@
   letter-spacing: -0.02em;
   max-width: 58rem;
 
+  @include breakpoint(mobile) {
+    max-width: none;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 2rem;
+    letter-spacing: -0.032rem;
+  }
+
   p {
     margin-bottom: 2rem;
+    @include breakpoint(mobile) {
+      margin-bottom: 1.5rem;
+    }
     &:last-child {
       margin-bottom: 0;
     }
@@ -88,6 +127,12 @@
   position: relative;
   z-index: 5;
   align-self: flex-start;
+
+  @include breakpoint(mobile) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 1.5rem;
+  }
 }
 
 .natural-tests__list-item {
@@ -117,6 +162,19 @@
       color: white;
     }
   }
+
+  @include breakpoint(mobile) {
+    padding: 0.6rem 1.2rem;
+    border-radius: 1.2rem;
+    border: 2px solid #eef1f8;
+    flex-grow: 1;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.7rem;
+    letter-spacing: -0.05rem;
+    width: auto;
+  }
 }
 
 .natural-tests__link-wrapper {
@@ -127,6 +185,10 @@
   align-items: flex-end;
   justify-items: flex-start;
   align-self: flex-end;
+
+  @include breakpoint(mobile) {
+    display: contents;
+  }
 }
 
 .natural-tests__link-icon {
@@ -144,6 +206,10 @@
     fill: var(--primary-color);
     transform: scaleX(-1);
   }
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
 }
 
 .natural-tests__link {
@@ -152,4 +218,11 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s, visibility 0s linear 0.2s;
+
+  @include breakpoint(mobile) {
+    order: 20;
+    width: auto;
+    opacity: 1;
+    visibility: inherit;
+  }
 }
