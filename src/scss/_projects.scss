@@ -252,6 +252,7 @@
   flex-grow: 1;
   border-radius: 1.2rem;
   overflow: hidden;
+  overflow: clip;
   backface-visibility: hidden;
   transition: color 0.4s;
   position: relative;
@@ -283,6 +284,7 @@
 
       .projects__card-bg-image {
         filter: grayscale(0);
+        transform: scale(1.03);
       }
     }
   }

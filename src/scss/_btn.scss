@@ -21,6 +21,11 @@
     height: 1rem;
     fill: currentColor;
     flex-shrink: 0;
+
+    &.icon-doc {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 
   &:link,

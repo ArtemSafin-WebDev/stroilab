@@ -32,4 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
+  if (window.location.hash == "") {
+    return false;
+  }
+
+  const el = document.querySelector<HTMLElement>(window.location.hash);
+
+  if (el !== null) {
+    console.log("Scrolling");
+    el.scrollIntoView({ behavior: "smooth" });
+  }
 });

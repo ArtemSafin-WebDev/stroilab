@@ -220,6 +220,46 @@
   }
 }
 
+.contact-us__form-input-label {
+  position: relative;
+  display: block;
+}
+
+.contact-us__form-input-label-text {
+  left: 2.4rem;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  letter-spacing: -0.02em;
+  color: #0c0d0f;
+  position: absolute;
+  top: 3.8rem;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  pointer-events: none;
+  transition: transform 0.2s;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.4rem;
+    letter-spacing: -0.032rem;
+    top: 3rem;
+  }
+}
+
+.contact-us__form-input:focus ~ .contact-us__form-input-label-text,
+.contact-us__form-input:not(:placeholder-shown)
+  ~ .contact-us__form-input-label-text {
+  transform: translateY(-50%) scale(0.8) translateY(-2rem);
+
+  @include breakpoint(mobile) {
+    transform: translateY(-50%) scale(0.8) translateY(-1.4rem);
+  }
+}
+
 .contact-us__form-input {
   display: block;
   width: 100%;
@@ -235,6 +275,17 @@
   background: #e9edf3;
   box-shadow: inset 0rem 0rem 2.1rem rgba(255, 255, 255, 0.4);
   border-radius: 1.2rem;
+  padding-top: 1.7rem;
+  // border: 1px solid #e9edf3;
+  transition: border-color 0.2s, background-color 0.2s;
+  &::placeholder {
+    color: #0c0d0f;
+    opacity: 0;
+  }
+
+  &.not-valid {
+    outline: 1px solid var(--orange);
+  }
 
   @include breakpoint(mobile) {
     border-radius: 1.2rem;
@@ -242,26 +293,25 @@
     box-shadow: 0px 0px 2.1rem 0px rgba(255, 255, 255, 0.4) inset;
     height: 6rem;
     padding: 0 2.4rem;
+    padding-top: 1.6rem;
     font-size: 1.6rem;
     font-style: normal;
     font-weight: 500;
     line-height: 2.4rem;
     letter-spacing: -0.032rem;
   }
-  &::placeholder {
-    color: #0c0d0f;
-  }
 }
 
 textarea.contact-us__form-input {
   resize: none;
   height: 12.5rem;
-  padding-top: 2rem;
+  padding-top: 3.4rem;
   padding-bottom: 2rem;
 
   @include breakpoint(mobile) {
     height: 10rem;
     padding: 2rem 2.4rem;
+    padding-top: 2.6rem;
   }
 }
 

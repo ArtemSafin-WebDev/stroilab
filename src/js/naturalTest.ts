@@ -37,6 +37,16 @@ export default function naturalTest() {
           "<+=0.6"
         );
         tl.from(
+          ".natural-tests__image-wrapper",
+          {
+            autoAlpha: 0,
+            duration: 1.2,
+
+            ease: "power2.out",
+          },
+          ">-=0.6"
+        );
+        tl.from(
           ".natural-tests__link-wrapper",
           {
             autoAlpha: 0,

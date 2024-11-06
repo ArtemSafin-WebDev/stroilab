@@ -51,6 +51,7 @@ export default function equipment() {
           instance = new Swiper(container, {
             slidesPerView: "auto",
             speed: 600,
+            slidesPerGroup: 3,
             modules: [Navigation, Pagination],
             pagination: {
               el: element.querySelector<HTMLElement>(

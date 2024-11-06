@@ -52,7 +52,7 @@ export default function labServices() {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: element,
-            start: "top bottom-=30%",
+            start: "top bottom-=20%",
           },
         });
 
@@ -66,8 +66,8 @@ export default function labServices() {
           ".lab-services__certificate",
           {
             autoAlpha: 0,
-            duration: 1.2,
-            scale: 0,
+            duration: 1,
+            scale: 0.9,
             ease: "power2.inOut",
           },
           "<"

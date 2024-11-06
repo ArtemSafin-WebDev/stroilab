@@ -192,7 +192,7 @@
   @include breakpointMF(small-tablet) {
     @media (hover: hover) {
       &:hover {
-        border-color: #e94d11;
+        border-color: #a5c950;
         .clients__slider-card-logo {
           filter: grayscale(0%);
         }
@@ -204,7 +204,7 @@
     border-radius: 0.388rem;
 
     .swiper-slide-active & {
-      border-color: #e94d11;
+      border-color: #a5c950;
       .clients__slider-card-logo {
         filter: grayscale(0%);
       }

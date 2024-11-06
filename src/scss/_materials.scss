@@ -15,9 +15,10 @@
 
 .materials__card {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
+  grid-template-columns: 1fr minmax(0, 40rem) 1fr;
   grid-gap: 2rem;
-  grid-template-areas: "heading textcontent" "link textcontent";
+  grid-column-gap: 5.4rem;
+  grid-template-areas: "heading heading textcontent" "link link textcontent";
   padding: 2.4rem;
   border: 2px solid rgba(228, 232, 240, 1);
   border-radius: 1.2rem;

@@ -37,6 +37,16 @@ export default function fieldLab() {
           ">-=0.2"
         );
         tl.from(
+          ".field-lab__image-wrapper",
+          {
+            autoAlpha: 0,
+            duration: 1.2,
+
+            ease: "power2.out",
+          },
+          "<+=0.6"
+        );
+        tl.from(
           ".field-lab__text",
           {
             autoAlpha: 0,
@@ -44,7 +54,7 @@ export default function fieldLab() {
             y: 20,
             ease: "power3.out",
           },
-          "<"
+          ">-=0.6"
         );
         tl.from(
           ".field-lab__link-wrapper",
