@@ -1,0 +1,91 @@
+.project-tests {
+  @include blockWrapper;
+  margin-bottom: 7.5rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 2rem;
+  }
+}
+
+.project-tests__content {
+  @include blockContent;
+  padding-bottom: 7.5rem;
+  border-bottom: 2px solid #e9edf3;
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 70rem);
+  grid-gap: 2rem;
+  grid-column-gap: 5.4rem;
+  grid-template-areas: "heading list";
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0 1rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.project-tests__heading {
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.2rem;
+  grid-area: heading;
+
+  @include breakpoint(mobile) {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 3rem; /* 150% */
+    letter-spacing: -0.08rem;
+  }
+}
+
+.project-tests__list {
+  grid-area: list;
+  display: flex;
+
+  gap: 2.5rem;
+  flex-wrap: wrap;
+
+  @include breakpoint(mobile) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 1.6rem;
+    row-gap: 1rem;
+  }
+}
+
+.project-tests__list-item {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-tests__card {
+  text-align: center;
+  padding: 2.4rem;
+  border-radius: 1.2rem;
+  background: #e9edf3;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem;
+  letter-spacing: -0.1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.1rem;
+    padding: 1.5rem 1rem;
+  }
+}

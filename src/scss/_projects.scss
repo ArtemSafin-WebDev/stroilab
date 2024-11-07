@@ -79,12 +79,19 @@
     border-radius: 1rem;
     border: 1px solid #e9edf3;
     width: 100%;
+    text-align: left;
     svg {
       width: 2rem;
       height: 2rem;
       flex-shrink: 0;
       transition: transform 0.2s;
       fill: rgba(162, 170, 186, 1);
+    }
+
+    .projects__categories.active & {
+      svg {
+        transform: rotate(180deg);
+      }
     }
   }
 }
@@ -100,6 +107,16 @@
   font-weight: 700;
   line-height: 3.4rem;
   letter-spacing: -0.028rem;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+
+    .projects__categories-checkbox-text {
+      text-decoration-color: var(--text-color);
+    }
+  }
 }
 
 .projects__categories-dropdown {
@@ -115,6 +132,13 @@
     width: 100%;
     opacity: 0;
     visibility: hidden;
+    transition: opacity 0.4s, visibility 0s linear 0.4s;
+
+    .projects__categories.active & {
+      opacity: 1;
+      visibility: inherit;
+      transition: opacity 0.4s, visibility 0.4s;
+    }
   }
 }
 
@@ -161,11 +185,13 @@
   @media (hover: hover) {
     &:hover {
       .projects__categories-input:not(:checked)
-        ~ .projects__categories-checkbox-text {
+        ~ .projects__categories-checkbox-text-content
+        .projects__categories-checkbox-text {
         color: var(--primary-color);
       }
       .projects__categories-input:not(:checked)
-        ~ .projects__categories-checkbox-count {
+        ~ .projects__categories-checkbox-text-content
+        .projects__categories-checkbox-count {
         color: var(--primary-color);
       }
     }
@@ -192,7 +218,9 @@
   text-decoration-thickness: 1px;
   text-underline-offset: 1px;
   text-decoration-color: transparent;
-  .projects__categories-input:checked ~ & {
+  .projects__categories-input:checked
+    ~ .projects__categories-checkbox-text-content
+    & {
     color: var(--primary-color);
     text-decoration-color: var(--primary-color);
   }
@@ -204,6 +232,10 @@
     line-height: 3.4rem;
     letter-spacing: -0.028rem;
   }
+}
+
+.projects__categories-checkbox-text-content {
+  display: contents;
 }
 
 .projects__categories-checkbox-count {
@@ -220,9 +252,12 @@
     font-weight: 700;
     line-height: 3.4rem;
     letter-spacing: -0.028rem;
+    color: var(--primary-color);
   }
 
-  .projects__categories-input:checked ~ & {
+  .projects__categories-input:checked
+    ~ .projects__categories-checkbox-text-content
+    & {
     color: var(--primary-color);
   }
 }

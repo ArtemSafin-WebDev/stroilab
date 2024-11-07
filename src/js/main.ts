@@ -13,6 +13,9 @@ import fieldLab from "./fieldLab";
 import naturalTest from "./naturalTest";
 import contactUs from "./contactUs";
 import testLab from "./testLab";
+import projectGallery from "./projectGallery";
+import otherProjects from "./otherProjects";
+import projects from "./projects";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -28,6 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
   actions();
   naturalTest();
   contactUs();
+  projectGallery();
+  otherProjects();
+  projects();
 });
 
 window.addEventListener("load", () => {
