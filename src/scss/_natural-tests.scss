@@ -29,6 +29,10 @@
   @media (hover: hover) {
     &:has(.natural-tests__card-wrapper:hover) {
       border-color: var(--primary-color);
+
+      .natural-tests__image {
+        transform: scale(1.04);
+      }
     }
   }
 
@@ -64,6 +68,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s;
 }
 
 .natural-tests__card-wrapper {

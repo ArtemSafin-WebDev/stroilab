@@ -151,6 +151,7 @@
   align-items: center;
   gap: 1rem;
   justify-content: center;
+  pointer-events: all;
 
   @include breakpoint(mobile) {
     flex-direction: column;

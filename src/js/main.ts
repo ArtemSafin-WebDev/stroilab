@@ -16,6 +16,8 @@ import testLab from "./testLab";
 import projectGallery from "./projectGallery";
 import otherProjects from "./otherProjects";
 import projects from "./projects";
+import services from "./services";
+import scrollToHash from "./scrollToHash";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -38,14 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
-  if (window.location.hash == "") {
-    return false;
-  }
-
-  const el = document.querySelector<HTMLElement>(window.location.hash);
-
-  if (el !== null) {
-    console.log("Scrolling");
-    el.scrollIntoView({ behavior: "smooth" });
-  }
+  scrollToHash();
+  services();
 });

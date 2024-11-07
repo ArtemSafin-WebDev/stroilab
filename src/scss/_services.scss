@@ -1,0 +1,146 @@
+.services {
+  @include blockWrapper;
+  margin-bottom: 7.5rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 5rem;
+  }
+}
+
+.services__content {
+  @include blockContent;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(mobile) {
+    padding: 0 1rem;
+  }
+}
+
+.services__heading {
+  font-size: 8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 9rem; /* 112.5% */
+  letter-spacing: -0.32rem;
+  text-align: center;
+
+  @include breakpoint(mobile) {
+    font-size: 2.7rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 3rem; /* 111.111% */
+    letter-spacing: -0.108rem;
+    text-align: left;
+  }
+}
+
+.services__text {
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.4rem; /* 141.667% */
+  letter-spacing: -0.048rem;
+  text-align: center;
+  margin-top: 2.5rem;
+  align-self: center;
+  max-width: 160rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 2.5rem; /* 138.889% */
+    letter-spacing: -0.036rem;
+    margin-top: 2rem;
+    text-align: left;
+  }
+}
+
+.services__table {
+  margin-top: 7.5rem;
+  @include breakpoint(mobile) {
+    margin-top: 2rem;
+    display: flex;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    padding: 0 2rem;
+  }
+}
+
+.services__table-wrapper {
+  @include breakpoint(mobile) {
+    flex-shrink: 0;
+    min-width: 100%;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    @include breakpoint(mobile) {
+      min-width: 100%;
+      width: max-content;
+    }
+
+    thead {
+      th {
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2rem; /* 100% */
+        letter-spacing: -0.1rem;
+        border: 1px solid #d0d5dd;
+        background: #e9edf3;
+        padding: 2.8rem;
+        text-align: center;
+        vertical-align: top;
+
+        @include breakpoint(mobile) {
+          padding: 0.8rem 0.4rem;
+          font-size: 0.5801rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 0.5801rem; /* 100% */
+          letter-spacing: -0.029rem;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    tbody {
+      td {
+        padding: 1.5rem;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #d0d5dd;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2rem; /* 100% */
+        letter-spacing: -0.1rem;
+
+        @include breakpoint(mobile) {
+          font-size: 0.4931rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 0.5801rem; /* 117.647% */
+          letter-spacing: -0.029rem;
+          padding: 1rem;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+.services__table {
+  @include breakpoint(mobile) {
+    // width: 100vw;
+    // position: relative;
+    // left: 50%;
+    // transform: translateX(-50%);
+    // overflow-y: hidden;
+  }
+}
