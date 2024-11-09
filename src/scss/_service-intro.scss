@@ -1,0 +1,35 @@
+.service-intro {
+  @include blockWrapper;
+  margin-bottom: 7.5rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 2rem;
+  }
+}
+
+.service-intro__content {
+  @include blockContent;
+  padding-bottom: 7.5rem;
+  border-bottom: 2px solid #e9edf3;
+
+  @include breakpoint(mobile) {
+    padding: 0 1rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.service-intro__heading {
+  font-size: 8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 9rem; /* 112.5% */
+  letter-spacing: -0.32rem;
+
+  @include breakpoint(mobile) {
+    font-size: 2.7rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3rem; /* 111.111% */
+    letter-spacing: -0.108rem;
+  }
+}

@@ -1,19 +1,20 @@
 import { Draggable } from "gsap/all";
 import { debounce } from "lodash";
 import { InertiaPlugin } from "./plugins/InertiaPlugin.js";
+import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 
-gsap.registerPlugin(Draggable, InertiaPlugin);
+gsap.registerPlugin(Draggable, InertiaPlugin, ScrollTrigger);
 
-export default function services() {
+export default function servicePrice() {
   const elements = Array.from(
-    document.querySelectorAll<HTMLElement>(".services")
+    document.querySelectorAll<HTMLElement>(".service-price")
   );
 
   elements.forEach((element) => {
-    const table = element.querySelector<HTMLElement>(".services__table");
+    const table = element.querySelector<HTMLElement>(".service-price__table");
     const tableWrapper = element.querySelector<HTMLElement>(
-      ".services__table-wrapper"
+      ".service-price__table-wrapper"
     );
     if (table && tableWrapper) {
       let mm = gsap.matchMedia();
@@ -60,5 +61,50 @@ export default function services() {
         };
       });
     }
+
+    let mm = gsap.matchMedia();
+
+    mm.add(
+      "(min-width: 641px)",
+      () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top bottom-=30%",
+          },
+        });
+
+        tl.from(".service-price__heading", {
+          autoAlpha: 0,
+          duration: 1.2,
+          y: 30,
+          ease: "power2.out",
+        });
+
+        tl.from(
+          ".service-price__list-item",
+          {
+            autoAlpha: 0,
+            duration: 0.8,
+            y: 30,
+            stagger: 0.2,
+            ease: "power2.out",
+          },
+          0.6
+        );
+
+        tl.from(
+          ".service-price__table",
+          {
+            autoAlpha: 0,
+            duration: 1.2,
+            y: 30,
+            ease: "power2.out",
+          },
+          ">-=0.2"
+        );
+      },
+      element
+    );
   });
 }

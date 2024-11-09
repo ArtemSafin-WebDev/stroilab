@@ -20,12 +20,13 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(5px);
+    background: black;
+    opacity: var(--bg-desktop-opacity, 0.15);
+    backdrop-filter: blur(var(--bg-desktop-blur, 5px));
 
     @include breakpoint(mobile) {
-      background: rgba(12, 13, 15, 0.25);
-      backdrop-filter: blur(2px);
+      opacity: var(--bg-mobile-opacity, 0.25);
+      backdrop-filter: blur(var(--bg-mobile-blur));
     }
   }
 }

@@ -32,12 +32,13 @@
   line-height: 100%;
   letter-spacing: -0.2rem;
   grid-area: heading;
+  text-wrap: balance;
 
   @include breakpoint(mobile) {
     font-size: 2rem;
     font-style: normal;
     font-weight: 650;
-    line-height: 3rem; /* 150% */
+    line-height: 1.2;
     letter-spacing: -0.08rem;
   }
 }
@@ -62,6 +63,56 @@
     margin-bottom: 2rem;
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  @supports selector(:has(*)) {
+    @media (max-width: 640px) {
+      &:has(button):not(.show-all) {
+        p:not(:nth-of-type(-n + 2)) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  button {
+    display: none;
+
+    @supports selector(:has(*)) {
+      @media (max-width: 640px) {
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.7rem; /* 141.667% */
+        letter-spacing: -0.024rem;
+        text-decoration-line: underline;
+        text-decoration-skip-ink: none;
+        text-decoration-thickness: auto;
+        text-underline-offset: 1px;
+        color: var(--primary-color);
+        margin-top: 2rem;
+        display: block;
+        span {
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &.show-all {
+    button {
+      span {
+        &:nth-child(1) {
+          display: none;
+        }
+
+        &:nth-child(2) {
+          display: block;
+        }
+      }
     }
   }
 }

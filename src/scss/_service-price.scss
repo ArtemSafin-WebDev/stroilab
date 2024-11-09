@@ -1,0 +1,199 @@
+.service-price {
+  @include blockWrapper;
+  margin-bottom: 7.5rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 2rem;
+  }
+}
+
+.service-price__content {
+  @include blockContent;
+
+  @include breakpoint(mobile) {
+    padding: 0 1rem;
+  }
+}
+
+.service-price__row {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 70rem);
+  grid-gap: 2rem;
+  grid-column-gap: 5.4rem;
+  grid-template-areas: "heading list";
+  align-items: flex-start;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: stretch;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #e9edf3;
+  }
+}
+
+.service-price__heading {
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.2rem;
+  grid-area: heading;
+  text-wrap: balance;
+
+  @include breakpoint(mobile) {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 650;
+    line-height: 3rem; /* 150% */
+    letter-spacing: -0.08rem;
+  }
+}
+
+.service-price__list {
+  grid-area: list;
+  grid-template-columns: 1fr 1.3fr;
+  grid-gap: 2.5rem;
+  display: grid;
+
+  @include breakpoint(mobile) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 1.6rem;
+    grid-row-gap: 1rem;
+  }
+}
+
+.service-price__list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-price__card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 2.4rem 3rem;
+  border-radius: 1.2rem;
+  border: 2px solid #e9edf3;
+  gap: 0.2rem;
+
+  @include breakpoint(mobile) {
+    border-radius: 1.2rem;
+    border: 1px solid #e9edf3;
+    padding: 0.9rem 1.2rem;
+  }
+}
+
+.service-price__card-title {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.1rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.9rem; /* 135.714% */
+    letter-spacing: -0.1rem;
+  }
+}
+
+.service-price__card-amount {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3rem;
+  letter-spacing: -0.1rem;
+  color: var(--primary-color);
+
+  @include breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.9rem;
+    letter-spacing: -0.1rem;
+  }
+}
+
+.service-price__table {
+  margin-top: 7.5rem;
+  @include breakpoint(mobile) {
+    margin: 0;
+
+    display: flex;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    padding: 0 2rem;
+  }
+}
+
+.service-price__table-wrapper {
+  @include breakpoint(mobile) {
+    flex-shrink: 0;
+    min-width: 100%;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    @include breakpoint(mobile) {
+      min-width: 100%;
+      width: max-content;
+    }
+
+    thead {
+      th {
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2rem; /* 100% */
+        letter-spacing: -0.1rem;
+        border: 1px solid #d0d5dd;
+        background: #e9edf3;
+        padding: 2.8rem;
+        text-align: center;
+        vertical-align: top;
+
+        @include breakpoint(mobile) {
+          padding: 0.8rem 0.4rem;
+          font-size: 0.5801rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 0.5801rem; /* 100% */
+          letter-spacing: -0.029rem;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    tbody {
+      td {
+        padding: 1.5rem;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #d0d5dd;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2rem; /* 100% */
+        letter-spacing: -0.1rem;
+
+        @include breakpoint(mobile) {
+          font-size: 0.4931rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 0.5801rem; /* 117.647% */
+          letter-spacing: -0.029rem;
+          padding: 1rem;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

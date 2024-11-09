@@ -18,6 +18,9 @@ import otherProjects from "./otherProjects";
 import projects from "./projects";
 import services from "./services";
 import scrollToHash from "./scrollToHash";
+import servicePrice from "./servicePrice";
+import projectDescription from "./projectDescription";
+import projectTests from "./projectTests";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -36,6 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
   projectGallery();
   otherProjects();
   projects();
+  servicePrice();
+  projectDescription();
+  projectTests();
 });
 
 window.addEventListener("load", () => {
