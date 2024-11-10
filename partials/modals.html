@@ -1,0 +1,99 @@
+<div class="modal js-modal" id="callback-modal">
+    <div class="modal__inner">
+        <button class="modal__close js-modal-close" type="button">
+            <svg width="14" height="14" aria-hidden="true">
+                <use xlink:href="#cross"></use>
+            </svg>
+        </button>
+        <h2 class="modal__heading">
+            Заполните форму
+        </h2>
+        <form action="/" method="POST" class="modal__form js-form">
+            <div class="modal__form-fields">
+                <div class="modal__form-field">
+                    <div class="modal__form-input-wrapper">
+                        <label class="modal__form-input-label">
+                            <input type="text" class="modal__form-input" name="your-name" placeholder="Ваше ФИО"
+                                required="">
+                            <span class="modal__form-input-label-text">
+                                Ваше ФИО
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal__form-field">
+                    <div class="modal__form-input-wrapper">
+                        <label class="modal__form-input-label">
+                            <input type="email" class="modal__form-input" name="your-email" placeholder="Введите e-mail"
+                                required="">
+                            <span class="modal__form-input-label-text">
+                                Введите e-mail
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal__form-field">
+                    <div class="modal__form-input-wrapper">
+                        <label class="modal__form-input-label">
+                            <input type="text" class="modal__form-input" name="your-company"
+                                placeholder="Название организации">
+                            <span class="modal__form-input-label-text">
+                                Название организации
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal__form-field">
+                    <div class="modal__form-input-wrapper">
+                        <label class="modal__form-input-label">
+                            <textarea name="your-comment" class="modal__form-input"
+                                placeholder="Комментарий"></textarea>
+                            <span class="modal__form-input-label-text">
+                                Комментарий
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__form-policy">
+                <label class="modal__form-policy-checkbox">
+                    <input type="checkbox" name="policy" value="Y" class="modal__form-policy-checkbox-input" required=""
+                        checked="">
+                    <span class="modal__form-policy-checkbox-mark">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#checkmark"></use>
+                        </svg>
+                    </span>
+                    <span class="modal__form-policy-checkbox-text">
+                        Согласие на обработку персональных данных
+                    </span>
+                </label>
+            </div>
+            <button class="btn modal__form-submit" type="submit">
+                Отправить
+                <svg width="14" height="14" aria-hidden="true">
+                    <use xlink:href="#diagonal-arrow"></use>
+                </svg>
+            </button>
+        </form>
+    </div>
+</div>
+<div class="modal js-modal" id="success-modal">
+    <div class="modal__inner modal__inner--success">
+        <button class="modal__close js-modal-close" type="button">
+            <svg width="14" height="14" aria-hidden="true">
+                <use xlink:href="#cross"></use>
+            </svg>
+        </button>
+        <h2 class="modal__success-heading">
+            Ваша<br>
+            заявка<br>
+            принята
+        </h2>
+        <svg width="14" height="14" aria-hidden="true" class="modal__success-icon">
+            <use xlink:href="#success"></use>
+        </svg>
+
+
+    </div>
+</div>

@@ -7,12 +7,13 @@ export default function forms() {
 
   elements.forEach((form) => {
     const validator = new Validator(form);
+    form.validator = validator;
 
-    form.addEventListener("submit", (event) => {
-      validator.validate();
-      if (!validator.valid) {
-        event.preventDefault();
-      }
-    });
+    // form.addEventListener("submit", (event) => {
+    //   validator.validate();
+    //   if (!validator.valid) {
+    //     event.preventDefault();
+    //   }
+    // });
   });
 }

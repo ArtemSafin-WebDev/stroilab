@@ -21,8 +21,10 @@ import scrollToHash from "./scrollToHash";
 import servicePrice from "./servicePrice";
 import projectDescription from "./projectDescription";
 import projectTests from "./projectTests";
+import modals from "./modals";
 
 document.addEventListener("DOMContentLoaded", () => {
+  modals();
   menu();
   testLab();
   clients();
