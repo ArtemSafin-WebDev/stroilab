@@ -78,6 +78,13 @@
   border-radius: 1.2rem;
   border: 2px solid #e9edf3;
   gap: 0.2rem;
+  transition: color 0.2s, border-color 0.2s;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--primary-color);
+    }
+  }
 
   @include breakpoint(mobile) {
     border-radius: 1.2rem;

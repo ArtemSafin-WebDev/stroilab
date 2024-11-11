@@ -34,6 +34,12 @@
   grid-area: heading;
   text-wrap: balance;
 
+  @include breakpointMF(small-tablet) {
+    position: sticky;
+    left: 0;
+    top: 5rem;
+  }
+
   @include breakpoint(mobile) {
     font-size: 2rem;
     font-style: normal;
