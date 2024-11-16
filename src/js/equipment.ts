@@ -22,9 +22,21 @@ export default function equipment() {
       if (!container) return;
 
       let instance: Swiper | null = null;
+
+      let slideDuplicates: HTMLElement[] = [];
       const handleWidthChange = (e: MediaQueryListEvent | MediaQueryList) => {
         if (e.matches) {
           if (instance) instance.destroy();
+          const slides = Array.from(
+            container.querySelectorAll<HTMLElement>(".swiper-slide")
+          );
+          const wrapper = container.querySelector(".swiper-wrapper");
+          if (slides.length < 4) {
+            slideDuplicates = slides.map(
+              (slide) => slide.cloneNode(true) as HTMLElement
+            );
+            wrapper?.append(...slideDuplicates);
+          }
           instance = new Swiper(container, {
             slidesPerView: "auto",
             centeredSlides: true,
@@ -48,6 +60,11 @@ export default function equipment() {
           });
         } else {
           if (instance) instance.destroy();
+          if (slideDuplicates.length) {
+            slideDuplicates.forEach((slide) => slide.remove());
+            slideDuplicates = [];
+          }
+
           instance = new Swiper(container, {
             slidesPerView: "auto",
             speed: 600,

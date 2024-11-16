@@ -97,7 +97,9 @@
   gap: 1rem;
 
   @include breakpoint(mobile) {
-    display: none;
+    grid-gap: 0.3rem;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
   }
 }
 
@@ -110,6 +112,11 @@
   border-radius: 2.15rem;
   overflow: hidden;
   width: 8.6rem;
+
+  @include breakpoint(mobile) {
+    width: 100%;
+    border-radius: 0.9rem;
+  }
   &::before {
     content: "";
     display: block;

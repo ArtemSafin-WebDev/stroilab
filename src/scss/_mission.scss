@@ -48,6 +48,7 @@
   isolation: isolate;
   grid-template-areas: "left right";
   color: white;
+  min-height: 70rem;
 
   @include breakpoint(mobile) {
     min-height: 47rem;
