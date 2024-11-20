@@ -24,11 +24,34 @@ export default function projectGallery() {
         },
       });
 
-      tl.from(".project-gallery__content", {
-        autoAlpha: 0,
-        duration: 1.2,
-        ease: "power2.out",
+      tl.fromTo(
+        ".project-gallery__content",
+        { autoAlpha: 0 },
+        {
+          autoAlpha: 1,
+          duration: 1.2,
+          ease: "power2.out",
+        }
+      );
+    });
+    mm.add("(max-width: 640px)", () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: element,
+          start: "top bottom-=20%",
+        },
       });
+
+      tl.fromTo(
+        ".project-gallery__content",
+        { autoAlpha: 0 },
+        {
+          autoAlpha: 1,
+          duration: 1.2,
+          ease: "power2.out",
+        }
+      );
+      tl.timeScale(1.3);
     });
 
     const container = element.querySelector<HTMLElement>(".swiper");

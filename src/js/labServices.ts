@@ -11,7 +11,6 @@ export default function labServices() {
   );
   const mql = window.matchMedia("(max-width: 640px)");
   elements.forEach((element) => {
-    let mm = gsap.matchMedia();
     const container = element.querySelector<HTMLElement>(".swiper");
     if (container) {
       let instance: Swiper | null = null;
@@ -45,6 +44,8 @@ export default function labServices() {
         ScrollTrigger.refresh();
       });
     }
+
+    let mm = gsap.matchMedia();
 
     mm.add(
       "(min-width: 641px)",
@@ -84,7 +85,7 @@ export default function labServices() {
         );
 
         tl.from(
-          ".lab-services__list-item",
+          ".lab-services__card",
           {
             autoAlpha: 0,
             duration: 1,
@@ -94,6 +95,59 @@ export default function labServices() {
           },
           ">-=0.8"
         );
+      },
+      element
+    );
+    mm.add(
+      "(max-width: 640px)",
+      () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top bottom-=20%",
+          },
+        });
+
+        tl.from(".lab-services__heading", {
+          autoAlpha: 0,
+          duration: 1.2,
+          y: 20,
+          ease: "power2.out",
+        });
+        tl.from(
+          ".lab-services__certificate",
+          {
+            autoAlpha: 0,
+            duration: 1.2,
+            scale: 0.8,
+            ease: "power2.out",
+          },
+          "<+=0.6"
+        );
+        tl.from(
+          ".lab-services__text",
+          {
+            autoAlpha: 0,
+            duration: 1.2,
+
+            ease: "power3.out",
+          },
+          "<+=0.6"
+        );
+
+        tl.from(
+          ".lab-services__card",
+          {
+            autoAlpha: 0,
+            duration: 1.2,
+            stagger: 0.2,
+            y: 20,
+            ease: "power2.out",
+          },
+          "<+=0.6"
+        );
+
+        tl.timeScale(1.3);
       },
       element
     );

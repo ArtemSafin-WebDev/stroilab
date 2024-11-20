@@ -79,5 +79,71 @@ export default function materials() {
       },
       element
     );
+    mm.add(
+      "(max-width: 640px)",
+      () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top bottom-=30%",
+          },
+        });
+        tl.from(".materials__card", {
+          autoAlpha: 0,
+          duration: 1.2,
+          y: 40,
+          ease: "power2.out",
+        });
+        tl.from(
+          ".materials__card-heading",
+          {
+            autoAlpha: 0,
+            duration: 1.2,
+            y: 20,
+            ease: "power2.out",
+          },
+          "<+=0.6"
+        );
+        tl.from(
+          ".materials__card-list-item",
+          {
+            autoAlpha: 0,
+            duration: 0.4,
+            stagger: 0.1,
+            y: 10,
+            ease: "power2.out",
+          },
+          "<+=0.6"
+        );
+        tl.from(
+          ".materials__card-text",
+          {
+            autoAlpha: 0,
+            duration: 1.2,
+            y: 20,
+            ease: "power3.out",
+          },
+          "<+=0.6"
+        );
+
+        tl.from(
+          ".materials__card-categories-list-item",
+          {
+            autoAlpha: 0,
+            duration: 0.4,
+            stagger: 0.1,
+            y: 10,
+            ease: "power2.out",
+          },
+          "<+=0.6"
+        );
+        tl.from(".materials__card-link", {
+          autoAlpha: 0,
+          duration: 0.6,
+        });
+        tl.timeScale(1.3);
+      },
+      element
+    );
   });
 }

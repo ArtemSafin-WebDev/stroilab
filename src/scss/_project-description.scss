@@ -33,6 +33,8 @@
   letter-spacing: -0.2rem;
   grid-area: heading;
   text-wrap: balance;
+  opacity: 0;
+  visibility: hidden;
 
   @include breakpointMF(small-tablet) {
     position: sticky;
@@ -56,6 +58,8 @@
   font-weight: 700;
   line-height: 3rem;
   letter-spacing: -0.1rem;
+  opacity: 0;
+  visibility: hidden;
 
   @include breakpoint(mobile) {
     font-size: 1.2rem;

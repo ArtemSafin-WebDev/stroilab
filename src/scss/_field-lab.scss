@@ -170,17 +170,16 @@
 }
 
 .field-lab__link {
-  width: 27rem;
-  grid-area: stack;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s, visibility 0s linear 0.2s;
-  pointer-events: none;
+  @include breakpointMF(small-tablet) {
+    width: 27rem;
+    grid-area: stack;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0s linear 0.2s;
+    pointer-events: none;
+  }
 
   @include breakpoint(mobile) {
     order: 10;
-    width: auto;
-    opacity: 1;
-    visibility: inherit;
   }
 }

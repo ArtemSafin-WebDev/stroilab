@@ -54,6 +54,9 @@
   line-height: 9rem;
   letter-spacing: -0.04em;
   margin-bottom: 2.5rem;
+  opacity: 0;
+  visibility: hidden;
+  // transform: translateY(3rem);
 
   @include breakpoint(mobile) {
     font-size: 2.7rem;
@@ -89,6 +92,9 @@
   font-size: 2.4rem;
   line-height: 3.4rem;
   letter-spacing: -0.02em;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(2rem);
 
   @include breakpoint(mobile) {
     font-size: 1.8rem;
@@ -103,10 +109,14 @@
   display: none;
 
   @include breakpoint(mobile) {
-    align-self: stretch;
-    width: 100%;
+    align-self: flex-start;
+    width: 26.6rem;
     height: auto;
     display: block;
+    max-width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(2rem);
   }
 }
 
@@ -114,6 +124,9 @@
   grid-area: link;
   align-self: flex-end;
   justify-self: stretch;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(2rem);
 
   @include breakpoint(mobile) {
     align-self: stretch;
@@ -163,6 +176,8 @@
   padding-top: 4rem;
   gap: 0;
   flex-grow: 1;
+  opacity: 0;
+  visibility: hidden;
 
   @include breakpoint(mobile) {
     padding: 2.4rem;

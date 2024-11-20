@@ -169,16 +169,15 @@
 }
 
 .materials__card-link {
-  width: 27rem;
-  grid-area: stack;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s, visibility 0s linear 0.2s;
+  @include breakpointMF(small-tablet) {
+    width: 27rem;
+    grid-area: stack;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0s linear 0.2s;
+  }
 
   @include breakpoint(mobile) {
-    width: auto;
-    opacity: 1;
-    visibility: inherit;
     order: 30;
   }
 }

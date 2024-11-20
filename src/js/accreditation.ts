@@ -1,20 +1,15 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+
 gsap.registerPlugin(ScrollTrigger);
 
-export default function projectDescription() {
+export default function accreditation() {
   const elements = Array.from(
-    document.querySelectorAll<HTMLElement>(".project-description")
+    document.querySelectorAll<HTMLElement>(".accreditation")
   );
 
   elements.forEach((element) => {
-    const button = element.querySelector<HTMLButtonElement>("button");
-    button?.addEventListener("click", (event) => {
-      event.preventDefault();
-      button.parentElement?.classList.toggle("show-all");
-    });
     let mm = gsap.matchMedia();
-
     mm.add(
       "(min-width: 641px)",
       () => {
@@ -24,9 +19,8 @@ export default function projectDescription() {
             start: "top bottom-=30%",
           },
         });
-
         tl.fromTo(
-          ".project-description__heading",
+          ".accreditation__card",
           {
             autoAlpha: 0,
             y: 30,
@@ -37,18 +31,6 @@ export default function projectDescription() {
             y: 0,
             ease: "power2.out",
           }
-        );
-
-        tl.fromTo(
-          ".project-description__text",
-          { autoAlpha: 0, y: 30 },
-          {
-            autoAlpha: 1,
-            duration: 1.2,
-            y: 0,
-            ease: "power2.out",
-          },
-          "<+=0.6"
         );
       },
       element
@@ -62,12 +44,11 @@ export default function projectDescription() {
             start: "top bottom-=30%",
           },
         });
-
         tl.fromTo(
-          ".project-description__heading",
+          ".accreditation__card",
           {
             autoAlpha: 0,
-            y: 20,
+            y: 30,
           },
           {
             autoAlpha: 1,
@@ -76,18 +57,7 @@ export default function projectDescription() {
             ease: "power2.out",
           }
         );
-
-        tl.fromTo(
-          ".project-description__text",
-          { autoAlpha: 0, y: 20 },
-          {
-            autoAlpha: 1,
-            duration: 1.2,
-            y: 0,
-            ease: "power2.out",
-          },
-          "<+=0.6"
-        );
+        tl.timeScale(1.3);
       },
       element
     );

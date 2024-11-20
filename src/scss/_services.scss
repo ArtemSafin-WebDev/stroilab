@@ -24,6 +24,8 @@
   line-height: 9rem; /* 112.5% */
   letter-spacing: -0.32rem;
   text-align: center;
+  opacity: 0;
+  visibility: hidden;
 
   @include breakpoint(mobile) {
     font-size: 2.7rem;
@@ -45,6 +47,8 @@
   margin-top: 2.5rem;
   align-self: center;
   max-width: 160rem;
+  opacity: 0;
+  visibility: hidden;
 
   @include breakpoint(mobile) {
     font-size: 1.8rem;
@@ -59,6 +63,8 @@
 
 .services__table {
   margin-top: 7.5rem;
+  opacity: 0;
+  visibility: hidden;
   @include breakpoint(mobile) {
     margin-top: 2rem;
     display: flex;

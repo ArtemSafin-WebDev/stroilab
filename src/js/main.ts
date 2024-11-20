@@ -22,6 +22,7 @@ import servicePrice from "./servicePrice";
 import projectDescription from "./projectDescription";
 import projectTests from "./projectTests";
 import modals from "./modals";
+import accreditation from "./accreditation";
 
 document.addEventListener("DOMContentLoaded", () => {
   modals();
@@ -44,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   servicePrice();
   projectDescription();
   projectTests();
+  accreditation();
 });
 
 window.addEventListener("load", () => {

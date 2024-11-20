@@ -22,6 +22,8 @@
   border-radius: 1.2rem;
   overflow: hidden;
   overflow: clip;
+  opacity: 0;
+  visibility: hidden;
 
   @include breakpoint(mobile) {
     padding: 1.6rem 1.2rem;
